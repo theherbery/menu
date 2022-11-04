@@ -189,25 +189,26 @@
 	<section id="fourth" class="main">
 		<header>
 			<div class="container">
-				<h2>Sed feugiat ipsum consequat</h2>
-				<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum
-					dolor sit amet consequat<br />
-					feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem
-					ipsum dolor sit amet.</p>
+				<h2>Lets Chat.. </h2>
+				<p>Give us a call on <b>07706 282420</b>, if you prefer to place an order/enquiry<br />
+					by messaging us then please use the form below, our hours are 10am to 3am.</p>
+				<p>If you are placing an order, please remember to provide a contact number and detailed<br />
+					address information so we will be able to find you.</p>
 			</div>
 		</header>
 		<div class="content style4 featured">
 			<div class="container medium">
-				<form method="post" action="#">
+				<form id="my-form" action="https://formspree.io/f/moqbpbok" method="POST">
 					<div class="row gtr-50">
-						<div class="col-6 col-12-mobile"><input type="text" placeholder="Name" /></div>
-						<div class="col-6 col-12-mobile"><input type="text" placeholder="Email" /></div>
+						<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+						<div class="col-6 col-12-mobile"><input type="email" name="email" placeholder="Email" /></div>
 						<div class="col-12"><textarea name="message" placeholder="Message"></textarea></div>
 						<div class="col-12">
 							<ul class="actions special">
 								<li><input type="submit" class="button" value="Send Message" /></li>
 								<li><input type="reset" class="button alt" value="Clear Form" /></li>
 							</ul>
+							<p id="my-form-status"></p>
 						</div>
 					</div>
 				</form>
@@ -241,5 +242,38 @@
 	<script src="assets/js/main.js"></script>
 
 </body>
+
+<script>
+	var form = document.getElementById("my-form");
+
+	async function handleSubmit(event) {
+		event.preventDefault();
+		var status = document.getElementById("my-form-status");
+		var data = new FormData(event.target);
+		fetch(event.target.action, {
+			method: form.method,
+			body: data,
+			headers: {
+				'Accept': 'application/json'
+			}
+		}).then(response => {
+			if (response.ok) {
+				status.innerHTML = "Thanks! We willl be in touch soon..";
+				form.reset()
+			} else {
+				response.json().then(data => {
+					if (Object.hasOwn(data, 'errors')) {
+						status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+					} else {
+						status.innerHTML = "Oops! There was a problem submitting your form"
+					}
+				})
+			}
+		}).catch(error => {
+			status.innerHTML = "Oops! There was a problem submitting your form :("
+		});
+	}
+	form.addEventListener("submit", handleSubmit)
+</script>
 
 </html>
