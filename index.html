@@ -200,9 +200,13 @@
 			<div class="container medium">
 				<form id="my-form" action="https://formspree.io/f/moqbpbok" method="POST">
 					<div class="row gtr-50">
-						<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-						<div class="col-6 col-12-mobile"><input type="email" name="email" placeholder="Email" /></div>
-						<div class="col-12"><textarea name="message" placeholder="Message"></textarea></div>
+						<div class="col-6 col-12-mobile"><input type="text" name="name" id="name" placeholder="Name" />
+						</div>
+						<div class="col-6 col-12-mobile"><input type="email" name="email" id="email"
+								placeholder="Email" /></div>
+						<div class="col-12"><textarea name="message" id="" message"
+								placeholder="Say something..."></textarea>
+						</div>
 						<div class="col-12">
 							<ul class="actions special">
 								<li><input type="submit" class="button" value="Send Message" /></li>
@@ -216,19 +220,11 @@
 		</div>
 	</section>
 
-	<!-- Footer -->
 	<section id="footer">
-		<ul class="icons">
-			<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-			<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-			<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-		</ul>
 		<div class="copyright">
 			<ul class="menu">
-				<li>&copy; Untitled. All rights reserved.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				<li><img src="images/imgbin_medical-cannabis-drug-kush-hemp-png.png" height="64" width="64" />
+					&copy; The Herbery. Peace and love to all.</li>
 			</ul>
 		</div>
 	</section>
@@ -258,19 +254,19 @@
 			}
 		}).then(response => {
 			if (response.ok) {
-				status.innerHTML = "Thanks! We willl be in touch soon..";
+				status.innerHTML = "<br/>Thanks! We willl be in touch soon..";
 				form.reset()
 			} else {
 				response.json().then(data => {
 					if (Object.hasOwn(data, 'errors')) {
 						status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
 					} else {
-						status.innerHTML = "Oops! There was a problem submitting your form"
+						status.innerHTML = "<br/>Oops! There was a problem submitting your form"
 					}
 				})
 			}
 		}).catch(error => {
-			status.innerHTML = "Oops! There was a problem submitting your form :("
+			status.innerHTML = "<br/>Oops! There was a problem submitting your form :("
 		});
 	}
 	form.addEventListener("submit", handleSubmit)
