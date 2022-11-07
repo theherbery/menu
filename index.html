@@ -61,77 +61,126 @@
 								</tr>
 								<tr>
 									<td>A2</td>
+									<td>Strawberry Sativa</td>
+									<td>10.00</td>
+									<td>30.00</td>
+									<td>60.00</td>
+								</tr>
+								<tr>
+									<td>A3</td>
+									<td>Papaya Punch</td>
+									<td>10.00</td>
+									<td>30.00</td>
+									<td>90.00</td>
+								</tr>
+								<tr>
+									<td>A4</td>
 									<td>Amnesia Haze</td>
 									<td>12.00</td>
 									<td>35.00</td>
 									<td>70.00</td>
 								</tr>
 								<tr>
-								<tr>
-									<td>A3</td>
-									<td>Francos Lemon Cheese</td>
-									<td>15.00</td>
-									<td>45.00</td>
-									<td>90.00</td>
-								</tr>
-								<td>A4</td>
-								<td>G13 Haze</td>
-								<td>15.00</td>
-								<td>45.00</td>
-								<td>90.00</td>
-								</tr>
-								<tr>
 									<td>A5</td>
-									<td>Double OG Kush</td>
-									<td>15.00</td>
-									<td>45.00</td>
-									<td>90.00</td>
+									<td>Alien Cookies</td>
+									<td>12.00</td>
+									<td>35.00</td>
+									<td>70.00</td>
 								</tr>
 								<tr>
 									<td>A6</td>
-									<td>Cookie Dawg x Gelato Cake</td>
+									<td>Francos Lemon Cheese</td>
 									<td>15.00</td>
 									<td>45.00</td>
 									<td>90.00</td>
 								</tr>
 								<tr>
 									<td>A7</td>
-									<td>Bruce Banner #3</td>
+									<td>G13 Haze</td>
 									<td>15.00</td>
 									<td>45.00</td>
 									<td>90.00</td>
 								</tr>
 								<tr>
 									<td>A8</td>
-									<td>Girl Scout Cookie</td>
+									<td>Double OG Kush</td>
 									<td>15.00</td>
 									<td>45.00</td>
 									<td>90.00</td>
 								</tr>
 								<tr>
 									<td>A9</td>
-									<td>Lemon Zkittle</td>
+									<td>Cookie Dawg x Gelato Cake</td>
 									<td>15.00</td>
 									<td>45.00</td>
 									<td>90.00</td>
 								</tr>
 								<tr>
 									<td>A10</td>
+									<td>Bruce Banner #3</td>
+									<td>15.00</td>
+									<td>45.00</td>
+									<td>90.00</td>
+								</tr>
+								<tr>
+									<td>A11</td>
+									<td>Girl Scout Cookie</td>
+									<td>15.00</td>
+									<td>45.00</td>
+									<td>90.00</td>
+								</tr>
+								<tr>
+									<td>A12</td>
+									<td>Lemon Zkittle</td>
+									<td>15.00</td>
+									<td>45.00</td>
+									<td>90.00</td>
+								</tr>
+								<tr>
+									<td>A13</td>
+									<td>Sour Diesel</td>
+									<td>15.00</td>
+									<td>45.00</td>
+									<td>90.00</td>
+								</tr>
+								<tr>
+									<td>A14</td>
 									<td>Mimosa Evo x Orange Punch</td>
 									<td>20.00</td>
 									<td>60.00</td>
 									<td>120.00</td>
 								</tr>
 								<tr>
-									<td>A11</td>
+									<td>A15</td>
 									<td>Runtz Muffin</td>
 									<td>20.00</td>
 									<td>60.00</td>
 									<td>120.00</td>
 								</tr>
 								<tr>
-									<td>A12</td>
+									<td>A16</td>
 									<td>Banana Haze</td>
+									<td>20.00</td>
+									<td>60.00</td>
+									<td>120.00</td>
+								</tr>
+								<tr>
+									<td>A17</td>
+									<td>Blue Glue</td>
+									<td>20.00</td>
+									<td>60.00</td>
+									<td>120.00</td>
+								</tr>
+								<tr>
+									<td>A18</td>
+									<td>Royal Gorilla</td>
+									<td>20.00</td>
+									<td>60.00</td>
+									<td>120.00</td>
+								</tr>
+								<tr>
+									<td>A19</td>
+									<td>Gelato #44</td>
 									<td>20.00</td>
 									<td>60.00</td>
 									<td>120.00</td>
@@ -203,6 +252,20 @@
 									<td>90.00</td>
 									<td>180.00</td>
 								</tr>
+								<tr>
+									<td>B6</td>
+									<td>Oreoz Moon Rocks</td>
+									<td>30.00</td>
+									<td>90.00</td>
+									<td>180.00</td>
+								</tr>
+								<tr>
+									<td>B7</td>
+									<td>Live Gorilla Glue Rosin</td>
+									<td>60.00</td>
+									<td>180.00</td>
+									<td>360.00</td>
+								</tr>
 							</tbody>
 							<!--
 								Footer, should comments be required or something ..
@@ -248,6 +311,7 @@
 								<li><input type="submit" class="button" value="Send Message" /></li>
 								<li><input type="reset" class="button alt" value="Clear Form" /></li>
 							</ul>
+							<br />
 							<p id="my-form-status"></p>
 						</div>
 					</div>
@@ -289,20 +353,22 @@
 				'Accept': 'application/json'
 			}
 		}).then(response => {
+			status.style = "color: red; font-size: 14px;";
 			if (response.ok) {
-				status.innerHTML = "<br/>Thanks! We willl be in touch soon..";
+				status.innerHTML = "Thanks! &hearts; We willl be in touch very soon..";
 				form.reset()
 			} else {
 				response.json().then(data => {
 					if (Object.hasOwn(data, 'errors')) {
-						status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+						status.innerHTML = "Oops! The form returned the following errors: <br />"
+							+ data["errors"].map(error => error["message"]).join("<br />")
 					} else {
-						status.innerHTML = "<br/>Oops! There was a problem submitting your form"
+						status.innerHTML = "Oops! There was a problem submitting your form"
 					}
 				})
 			}
 		}).catch(error => {
-			status.innerHTML = "<br/>Oops! There was a problem submitting your form :("
+			status.innerHTML = "Oops! There was a problem submitting your form :("
 		});
 	}
 	form.addEventListener("submit", handleSubmit)
