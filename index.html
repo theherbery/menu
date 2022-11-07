@@ -282,6 +282,53 @@
 			</div>
 		</div>
 	</section>
+	<section id="accordion" class="main">
+		<header>
+			<div class="container">
+				<h2>Strain Guide</h2>
+			</div>
+		</header>
+		<div class="container">
+			<div class="content style4 featured">
+				<div class="container large">
+					<div class="accordion-container">
+						<button class="accordion">Wedding Cake</button>
+						<p style="font-size: 16px;">
+							<img src="images/weddingCake.jpg" class="image fit half left" />
+							Wedding Cake, also known as "Triangle Mints #23," is a potent type of indica-hybrid
+							marijuana strain made by crossing Triangle Kush with Animal Mints. Fun fact: In Canada, this
+							strain is known as Pink Cookies. The Wedding Cake strain provides relaxing and euphoric
+							effects that calm the body and mind.<br /><br /> This strain yields a rich and tangy flavor profile with
+							undertones of earthy pepper. Medical marijuana patients choose Wedding Cake to help relieve
+							symptoms associated with pain, insomnia and appetite loss. Consumers with a low THC
+							tolerance should enjoy this strain with an extra slice of care due to its high THC content.
+							Wedding Cake has soared in popularity over the years and was named Leafly Strain of the Year
+							in 2019.
+
+						</p>
+					</div>
+
+					<div class="accordion-contianer">
+						<button class="accordion">Section 2</button>
+						<div class="panel">
+							<div class="content style2">
+
+							</div>
+						</div>
+					</div>
+
+					<div class="accordion-contianer">
+						<button class="accordion">Section 3</button>
+						<div class="panel">
+							<p>Lorem ipsum...</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section id="second" class="main">
 		<header>
 			<div class="container">
@@ -373,7 +420,14 @@
 			status.innerHTML = "Oops! There was a problem submitting your form :("
 		});
 	}
+
+	$(".accordion").on("click", function () {
+		$(this).toggleClass("active");
+		$(this).next().slideToggle(200);
+	});
+
 	form.addEventListener("submit", handleSubmit)
+
 </script>
 
 </html>
