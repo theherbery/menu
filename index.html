@@ -6,7 +6,7 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
-	<title>Cannabis Menu</title>
+	<title>The Herb Store | Cannabis Menu</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,7 +18,7 @@
 	<section id="header" class="dark">
 		<header>
 			<div class="container">
-				<img src="images/imgbin_medical-cannabis-drug-kush-hemp-png.png" alt="cannabis logo" width="128"
+				<img src="images/imgbin_medical-cannabis-drug-kush-hemp-png.png" alt="The Herb Store" width="128"
 					height="128" />
 				<h1>Welcome</h1>
 				<p>We stock the finest cannabis strains.<br />
@@ -287,8 +287,8 @@
 			<div class="container">
 				<h2>Lets Chat.. </h2>
 				<p>Give us a call on <a href="tel:+447706282420"><b>07706 282420</b></a>, or email <a
-						href="mailto:scribble.mail@pm.me">
-						<b>scribble.mail@pm.me,</b></a><br />
+						href="mailto:theherbstore@pm.me">
+						<b>theherbstore@pm.me,</b></a><br />
 					If you prefer to place an order/enquiry by messaging us then<br /> please use the form below,
 					our hours are 10am to 3am.<br />
 					If you are placing an order, please remember to provide a contact<br /> number and detailed
@@ -299,9 +299,12 @@
 			<div class="container medium">
 				<form id="my-form" action="https://formspree.io/f/moqbpbok" method="POST">
 					<div class="row gtr-50">
-						<div class="col-4 col-12-mobile"><input type="text" name="name" id="name" placeholder="Name" /></div>
-						<div class="col-4 col-12-mobile"><input type="email" name="email" id="email" placeholder="Email" /></div>
-						<div class="col-4 col-12-mobile"><input type="text" name="phone" id="phone" placeholder="Phone" /></div>
+						<div class="col-4 col-12-mobile"><input type="text" name="name" id="name" placeholder="Name" />
+						</div>
+						<div class="col-4 col-12-mobile"><input type="email" name="email" id="email"
+								placeholder="Email" /></div>
+						<div class="col-4 col-12-mobile"><input type="text" name="phone" id="phone"
+								placeholder="Phone" /></div>
 						<div class="col-12"><textarea name="message" id="" message"
 								placeholder="Say something..."></textarea>
 						</div>
@@ -322,8 +325,8 @@
 	<section id="footer">
 		<div class="copyright">
 			<ul class="menu">
-				<li><img src="images/imgbin_medical-cannabis-drug-kush-hemp-png.png" height="64" width="64" />
-					&copy; The Herbery. Peace and love, be kind &hearts;</li>
+				<li><img src="images/imgbin_medical-cannabis-drug-kush-hemp-png.png" height="48" width="48" />
+					&copy; The Herb Store. Be Kind.</li>
 			</ul>
 		</div>
 	</section>
@@ -352,7 +355,7 @@
 				'Accept': 'application/json'
 			}
 		}).then(response => {
-			status.style = "color: red; font-size: 14px;";
+			status.style = "color: red; font-size: 16px;";
 			if (response.ok) {
 				status.innerHTML = "Thanks! &hearts; We willl be in touch very soon..";
 				form.reset()
