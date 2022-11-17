@@ -208,6 +208,8 @@ body.is-preload *:after {
 
 .accordion {
 	background-color: #eee;
+	font: inherit;
+	font-size: 16px;
 	color: #444;
 	cursor: pointer;
 	padding: 18px;
