@@ -937,28 +937,60 @@
 				'Accept': 'application/json'
 			}
 		}).then(response => {
-			status.style = "color: red; font-size: 16px;";
 			if (response.ok) {
-				status.innerHTML = "Thanks! &hearts; We willl be in touch very soon..";
-				form.reset()
+				status.innerHTML = $.toast({
+					text: "Thanks! &hearts; We willl be in touch..",
+					showHideTransition: "fade",
+					hideAfter: 5000,
+					position: "bottom-left",
+					allowToastClose: true,
+					icon: "success",
+					type: "success"
+				});
 			} else {
 				response.json().then(data => {
 					if (Object.hasOwn(data, 'errors')) {
-						status.innerHTML = "Oops! The form returned the following errors: <br />"
-							+ data["errors"].map(error => error["message"]).join("<br />")
+						status.innerHTML = status.innerHTML = $.toast({
+							text: "Oops! The form returned the following errors: <br />"
+								+ data["errors"].map(error => error["message"]).join("<br />"),
+							showHideTransition: "fade",
+							hideAfter: 5000,
+							position: "bottom-left",
+							allowToastClose: true,
+							icon: "error",
+							type: "error"
+						});
 					} else {
-						status.innerHTML = "Oops! There was a problem submitting your form"
+						status.innerHTML = status.innerHTML = $.toast({
+							text: "Oops! There was a problem submitting the form",
+							showHideTransition: "fade",
+							hideAfter: 5000,
+							position: "bottom-left",
+							allowToastClose: true,
+							icon: "error",
+							type: "error"
+						});
 					}
 				})
 			}
 		}).catch(error => {
-			status.innerHTML = "Oops! There was a problem submitting your form :("
+			status.innerHTML = status.innerHTML = $.toast({
+				text: "Oops! There was a problem submitting the form",
+				showHideTransition: "fade",
+				hideAfter: 5000,
+				position: "bottom-left",
+				allowToastClose: true,
+				icon: "error",
+				type: "error"
+			});
 		});
 	}
 
+	form.reset();
+
 	$(".accordion").on("click", function () {
 		$(this).toggleClass("active");
-		$(this).next().slideToggle(200);
+		$(this).next().slideToggle(100);
 	});
 
 	form.addEventListener("submit", handleSubmit)
