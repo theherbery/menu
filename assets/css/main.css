@@ -1977,6 +1977,7 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
+form input[type="file"],
 form select,
 form .select,
 form textarea {
@@ -2011,6 +2012,7 @@ form textarea:focus {
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
+form input[type="file"],
 form select {
 	line-height: 1.25em;
 }
@@ -2086,6 +2088,7 @@ form :-ms-input-placeholder {
 .dark form input[type="text"],
 .dark form input[type="email"],
 .dark form input[type="password"],
+.dark form input[type="file"],
 .dark form select,
 .dark form .select,
 .dark form textarea {
@@ -2097,6 +2100,7 @@ form :-ms-input-placeholder {
 .dark form input[type="text"]:focus,
 .dark form input[type="email"]:focus,
 .dark form input[type="password"]:focus,
+.dark form input[type="file"]:focus,
 .dark form select:focus,
 .dark form .select:focus,
 .dark form textarea:focus {

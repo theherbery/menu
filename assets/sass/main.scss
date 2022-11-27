@@ -695,6 +695,8 @@ form {
 	input[type="text"],
 	input[type="email"],
 	input[type="password"],
+	input[type="file"],
+
 	select,
 	.select,
 	textarea {
@@ -718,6 +720,7 @@ form {
 	input[type="text"],
 	input[type="email"],
 	input[type="password"],
+	input[type="file"],
 	select {
 		line-height: 1.25em;
 	}
@@ -797,6 +800,7 @@ form {
 		input[type="text"],
 		input[type="email"],
 		input[type="password"],
+		input[type="file"],
 		select,
 		.select,
 		textarea {
