@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "HerbStore",
+    "short_name": "Herb",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "The finest strands for delivery."
+}
